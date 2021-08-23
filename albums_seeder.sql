@@ -1,4 +1,5 @@
 use codeup_test_db;
+truncate albums;
 describe albums;
 insert into albums(artist, name, release_date, sales, genre)
 values ('Metallica', 'Metallica', '1991', 25.2, 'Heavy Metal'),
