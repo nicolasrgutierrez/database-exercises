@@ -18,3 +18,4 @@ SELECT name AS 'Albums that had less than 20 million certified sales:' FROM albu
 SELECT '' as '';
 
 SELECT name AS  'All the albums with a genre of "Rock":' FROM albums WHERE genre = 'Rock';
+-- select * from albums where genre like "rock";
