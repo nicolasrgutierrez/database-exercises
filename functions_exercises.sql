@@ -23,5 +23,14 @@ where year(hire_date) between 1990 and 1999
   order by hire_date desc;
 
 
+Select *, datediff(curdate(), hire_date)
+from employees.employees
+where year(hire_date) between 1990 and 1999
+  and month(birth_date) = 12
+  and day(birth_date) = 25;
+
+
+
+
 
 
