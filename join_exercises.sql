@@ -14,7 +14,7 @@ from employees as e
 where dm.to_date = '9999-01-01' and gender = 'F'
 order by d.dept_name;
 
-select t.title as 'Position' -- Count not needed due to question verbiage???
+select t.title as 'Position' -- Count not needed due to question verbiage??? count(*) as 'Total in Position'
 from employees as e
 join titles as t on t.emp_no = e.emp_no
 join dept_emp de on e.emp_no = de.emp_no
