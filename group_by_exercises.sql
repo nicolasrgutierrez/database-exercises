@@ -12,7 +12,7 @@ from employees.employees
 where last_name like 'E%' and last_name like '%e'
 group by last_name, first_name;
 
-select last_name, count(last_name) totalEmployeesWithThisName
+select count(last_name) totalEmployeesWithThisName, last_name
 from employees.employees
 where last_name like '%q%' and last_name not like '%qu%'
 group by last_name;
