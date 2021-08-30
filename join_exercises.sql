@@ -14,12 +14,11 @@ from employees as e
 where dm.to_date = '9999-01-01' and gender = 'F'
 order by d.dept_name;
 
-select t.title as 'Position' -- Count not needed due to question verbiage??? count(*) as 'Total in Position'
-from employees as e
-join titles as t on t.emp_no = e.emp_no
-join dept_emp de on e.emp_no = de.emp_no
-join departments d on d.dept_no = de.dept_no
-where d.dept_name = 'Customer Service' and de.to_date = '9999-01-01'
+select t.title as 'Position', count(t.title) as 'Total in Position'
+from departments d
+inner join dept_emp de on d.dept_no = de.dept_no
+inner join titles t on de.emp_no = t.emp_no
+where d.dept_name = 'Customer Service' and de.to_date = '9999-01-01' and t.to_date = '9999-01-01'
 group by t.title;
 
 select d.dept_name as 'Department Name', concat(e.first_name, ' ', e.last_name) as 'Department Manager', s.salary as 'Salary'
