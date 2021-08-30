@@ -28,3 +28,11 @@ from employees as e
          join salaries s on e.emp_no = s.emp_no
 where dm.to_date = '9999-01-01' and s.to_date = '9999-01-01'
 order by d.dept_name;
+
+select concat(e.first_name, ' ', e.last_name) as Employee ,d.dept_name as Department
+from departments d
+inner join dept_emp de on d.dept_no = de.dept_no
+inner join employees e on de.emp_no = e.emp_no
+inner join dept_manager dm on d.dept_no = dm.dept_no
+inner join employees e2 on dm.emp_no = e2.emp_no
+where de.to_date = '9999-01-01' and dm.to_date = '9999-01-01'
